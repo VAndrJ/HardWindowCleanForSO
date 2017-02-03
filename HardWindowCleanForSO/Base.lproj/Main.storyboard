@@ -1,26 +1,84 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="15G1212" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="V55-eM-Xxp">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11106"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11524"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
-        <scene sceneID="tne-QT-ifu">
+        <scene sceneID="uCY-yM-CUh">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="V55-eM-Xxp" customClass="ViewController" customModule="HardWindowCleanForSO" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
-                        <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
+                        <viewControllerLayoutGuide type="top" id="hwG-gq-Pwv"/>
+                        <viewControllerLayoutGuide type="bottom" id="J4z-Qe-Qda"/>
                     </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                    <view key="view" contentMode="scaleToFill" id="0vI-Xl-s7J">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mNL-og-qu3">
+                                <rect key="frame" x="166" y="318" width="43" height="30"/>
+                                <state key="normal" title="Modal"/>
+                                <connections>
+                                    <segue destination="CXm-0a-phj" kind="presentation" identifier="SECONDVC" id="eaA-OA-D3Z"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xtQ-nK-NzV">
+                                <rect key="frame" x="158" y="364" width="58" height="30"/>
+                                <state key="normal" title="Go clear"/>
+                                <connections>
+                                    <action selector="btnClick:" destination="V55-eM-Xxp" eventType="touchUpInside" id="hpz-Py-e1r"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="mNL-og-qu3" firstAttribute="centerX" secondItem="0vI-Xl-s7J" secondAttribute="centerX" id="7V4-Gx-OTp"/>
+                            <constraint firstItem="xtQ-nK-NzV" firstAttribute="centerX" secondItem="mNL-og-qu3" secondAttribute="centerX" id="B80-xW-BZ4"/>
+                            <constraint firstItem="xtQ-nK-NzV" firstAttribute="top" secondItem="mNL-og-qu3" secondAttribute="bottom" constant="16" id="Q7g-Ke-a5r"/>
+                            <constraint firstItem="mNL-og-qu3" firstAttribute="centerY" secondItem="0vI-Xl-s7J" secondAttribute="centerY" id="ZMp-xQ-Yzx"/>
+                        </constraints>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="slW-dB-wVS" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="62" y="125"/>
+        </scene>
+        <!--SecondVC-->
+        <scene sceneID="CCQ-9K-LfG">
+            <objects>
+                <viewController storyboardIdentifier="SECONDVC" id="CXm-0a-phj" customClass="SecondVC" customModule="HardWindowCleanForSO" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nuz-iX-7II"/>
+                        <viewControllerLayoutGuide type="bottom" id="67w-L3-2Ry"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fs2-Cs-COr">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DzZ-ti-AYB">
+                                <rect key="frame" x="166" y="318" width="43" height="30"/>
+                                <state key="normal" title="Modal"/>
+                                <connections>
+                                    <segue destination="V55-eM-Xxp" kind="presentation" id="M9g-xJ-lA5"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="DzZ-ti-AYB" firstAttribute="centerX" secondItem="fs2-Cs-COr" secondAttribute="centerX" id="8Jg-fE-ftd"/>
+                            <constraint firstItem="DzZ-ti-AYB" firstAttribute="centerY" secondItem="fs2-Cs-COr" secondAttribute="centerY" id="Zdl-U2-bdc"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Fos-Fr-cIl" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="814" y="125"/>
         </scene>
     </scenes>
 </document>

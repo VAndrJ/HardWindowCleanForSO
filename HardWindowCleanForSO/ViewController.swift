@@ -10,16 +10,20 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        // Do any additional setup after loading the view, typically from a nib.
+    @IBAction func btnClick(_ sender: UIButton) {
+        let window = (UIApplication.shared.delegate as! AppDelegate).window!
+        let prewController = window.rootViewController
+        for element in window.subviews {
+            element.removeFromSuperview()
+        }
+        window.rootViewController = storyboard!.instantiateViewController(withIdentifier: "SECONDVC")
+        prewController?.dismiss(animated: false, completion: {
+            prewController?.view.removeFromSuperview()
+        })
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    deinit {
+        print("FirstVC deinit")
     }
-
-
 }
 
